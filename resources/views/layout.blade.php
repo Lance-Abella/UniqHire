@@ -32,7 +32,12 @@
                 </nav>
             </div>
         </div>
-        @yield('page-content')
+        <div class="row">
+            <div class="col">
+                @yield('page-content')
+            </div>
+        </div>
+        
     </div>
 </body>
 <style>
