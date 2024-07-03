@@ -16,6 +16,7 @@
             <div class="col">
                 <nav class="navbar mb-3">
                     <div class="container">
+
                         <a href="#" class="navbar-brand text-start ">
                             <img src="../images/logo.png" alt="UniqHire Logo" style="height:5rem;">
                         </a>
@@ -32,13 +33,18 @@
                 </nav>
             </div>
         </div>
-        @yield('page-content')
+        <div class="row">
+            <div class="col">
+                @yield('page-content')
+            </div>
+        </div>
+        
     </div>
 </body>
 <style>
     * {
         font-family: 'DM Sans', sans-serif;
-        font-size: 1rem;
+        font-size: 1.1rem;
         color: #373737;
     }
 
@@ -48,6 +54,11 @@
 
     .accent-text {
         color: #04B000;
+    }
+
+    .bg-text {
+        background-color: #04B000;
+        color: #ffff;
     }
 
     body {
@@ -61,3 +72,4 @@
     } */
 </style>
 </html>
+
