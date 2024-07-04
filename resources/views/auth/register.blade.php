@@ -2,11 +2,11 @@
 
 @section('page-title', 'UniqHire|Create Account')
 
-@section('auth-content')
+@section('page-content')
 <div class="container vh-100">
     <div class="row" style="padding-top:3rem;">
         <div class="col">
-            <div class="text-start" style="font-size: 2rem; font-weight:bold;">
+            <div class="text-start header-texts">
                 <a href="{{ route('login-page') }}" class="m-1"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" style="fill: rgba(4, 176, 0, 1);transform: ;msFilter:;"><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"></path></svg></a>
                 Create an Account.
             </div>
@@ -137,7 +137,7 @@
                 </div>
             </div>
             <div class="d-flex justify-content-center align-items-center mb-3">
-                <button type="reset" class="m-2 border-0 bg-transparent" style="font-weight:bold; width: 10rem; padding: 1rem;">
+                <button type="reset" class="m-2 border-0 bg-transparent clear-btn">
                     Clear
                 </button>
                 <button type="submit" class="m-2 border-0 bg-text" style="font-weight:bold; height:3.5rem; width: 10rem;">
@@ -147,7 +147,7 @@
             <div class="text-center">
                 <hr class="mb-4" style="width: 30rem; margin:0 auto;">
                 <span>
-                    Already have an account? <a href="{{ route('login-page') }}" class="fs-5 link-underline link-underline-opacity-0">Login.</a>
+                    Already have an account? <a href="{{ route('login-page') }}" class="fs-5 link-underline link-underline-opacity-0 accent-text bold-texts">Login.</a>
                 </span>
             </div>
         </form>

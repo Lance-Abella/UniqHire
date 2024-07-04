@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+/* Global Styles */
+
+* {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.1rem;
+    color: #373737;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+body {
+    background-color: #F2F1EE;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #373737;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Typography */
+
+.default-text {
+    color: #373737;
+}
+
+.accent-text {
+    color: #04B000;
+}
+
+.error-msg {
+    color: #FF0000;
+    font-style: italic;
+    font-size: 1rem;
+}
+
+.bg-text {
+    background-color: #04B000;
+    color: #ffffff;
+}
+
+.bold-texts {
+    font-weight: bold;
+}
+
+.user-index {
+    font-weight: bold;
+    padding-right: 1rem;
+}
+
+/* Images */
+
+.logo-big {
+    height: 8rem;
+}
+
+.logo-small {
+    height: 5rem;
+}
+
+.notif-icon {
+    padding-right: 1rem;
+}
+
+/* Buttons */
+
+.dash-btns {
+    padding: 2rem;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 2rem;
+}
+
+.clear-btn {
+    font-weight: bold;
+    width: 10rem;
+    padding: 1rem;
+}
+
+.submit-btn {
+    font-weight: bold;
+    height: 3.5rem;
+    width: 10rem;
+}
+
+/* Headers */
+
+.header-texts {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Sidebar */
+
+.side-bar {
+    position: absolute;
+    height: 90vh;
+    left: 0;
+    background-color: #f7f7f7;
+    width: 91.4px;
+    overflow: hidden;
+    transition: width 0.2s linear;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    padding-top: 2rem;
+}
+
+.side-bar a {
+    position: relative;
+    font-size: 1.2rem;
+    display: table;
+    width: 300px;
+    padding: 10px;
+}
+
+.side-bar a:hover {
+    background: rgba(4, 176, 0, 0.2);
+}
+
+.side-bar a:hover .icon-svg {
+    fill: #04B000; /* Change icon color on hover */
+}
+
+.side-bar:hover {
+    width: 15rem;
+    transition: all 0.5s ease;
+}
+
+.side-bar .icon-svg {
+    position: relative;
+    width: 80px;
+    height: 40px;
+    /* top: 14px; */
+    text-align: center;
+}
+
+.nav-items {
+    position: relative;
+    top: 12px;
+    margin-left: 12px;
+}
+
+.navbar {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+.logout-btn {
+    position: absolute;
+    bottom: 0;
+}
+
+/* .side-bar li {
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+} */
+
+/* Containers */
+
+.login-container {
+    width: 80rem;
+    height: 50rem;
+    border-radius: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.login-form {
+    padding-left: 5rem;
+    padding-top: 5.5rem;
+}
+
+/* Backgrounds */
+
+.less-opacity-bg {
+    background-color: rgba(4, 176, 0, 0.2);
+}
+
+
+.sidebar-content {
+    padding-left: 6rem;
+}

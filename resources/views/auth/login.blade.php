@@ -2,22 +2,22 @@
 
 @section('page-title', 'UniqHire Login')
 
-@section('auth-content')
+@section('page-content')
 <div class="container-fluid vh-100 d-flex justify-content-center align-items-center">
-    <div class="row bg-white" style="width:80rem; height:50rem; border-radius:2rem; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-        <div class="col left" style="padding-left:5rem; padding-top:5.5rem;">
+    <div class="row bg-white login-container">
+        <div class="col left login-form">
             <div class="row mb-5">
                 <div class="col-3"></div>
                 <div class="col">
-                    <img src="../images/logo.png" alt="UniqHire Logo" style="height: 8rem;">
+                    <img src="../images/logo.png" alt="UniqHire Logo" class="logo-big">
                 </div>
                 <div class="col-3"></div>
             </div>
-            <div class="fs-2 mb-2" style="font-weight:bold;">
+            <div class="mb-2 header-texts">
                 Sign In.
             </div>
             <div class="mb-4">
-                <span class="fs-5 ">Don't have an account? <a href="{{ route('register-form') }}" class="fs-5 link-underline link-underline-opacity-0">Create an account.</a></span>
+                <span class="fs-5 ">Don't have an account? <a href="{{ route('register-form') }}" class="fs-5 link-underline link-underline-opacity-0 accent-text bold-texts">Create an account.</a></span>
             </div>
             <form action="{{ route('login-page') }}" method="POST">
                 @csrf
@@ -45,7 +45,7 @@
                         </div>
                     </div>
                     <div class="col text-end">
-                        <a href="" class="link-underline link-underline-opacity-0">Forget Password?</a>
+                        <a href="" class="link-underline link-underline-opacity-0 accent-text">Forget Password?</a>
                     </div>
                 </div>
                 <div class="">
