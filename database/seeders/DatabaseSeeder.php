@@ -3,10 +3,13 @@
 namespace Database\Seeders;
 
 use App\Models\AllUser;
+use App\Models\Disability;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Role;
+use App\Models\UserInfo;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -21,36 +24,40 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        //ROLES
         $admin = Role::create(['role_name' => 'Admin']);
         $pwd = Role::create(['role_name' => 'PWD']);
         $trainer = Role::create(['role_name' => 'Trainer']);
         $employer = Role::create(['role_name' => 'Employer']);
         $sponsor = Role::create(['role_name' => 'Sponsor']);
-        // $roles = [
-        //     ['role_name' => 'PWD'],
-        //     ['role_name' => 'Training Agency'],
-        //     ['role_name' => 'Employer'],
-        //     ['role_name' => 'Sponsor'],
-        //     ['role_name' => 'Admin'],
-        // ];
-
-        // foreach ($roles as $role) {
-        //     Role::create($role);
-        // }
+        
+        //DISABILITIES
+        $arm = Disability::create(['disability_name' => 'Arm Amputee']);
+        $leg = Disability::create(['disability_name' => 'Leg Amputee']);
+        $hear = Disability::create(['disability_name' => 'Hearing Impaired']);
+        $speech = Disability::create(['disability_name' => 'Speech Impairment']);
+        $visual = Disability::create(['disability_name' => 'Visually Impaired']);
 
 
-        $user = User::create([
+        $user = User::create([        
+            'email' => 'kler@example.com',
+            'password' => Hash::make('qwe1234'),
+            
+        ]);
+
+        UserInfo::create([
             'firstname' => 'Evryl',
             'lastname' => 'Claire',
-            'email' => 'kler@example.com',
             'contactnumber' => '09123456789',
-            'password' => bcrypt('qwe1234'),
             'city' => 'cebu',
             'state' => 'bulacao',
+            'disability_id' => $arm->id, // Assign a disability ID here
+            'user_id' => $user->id,
         ]);
 
 
         $user->roles()->attach($admin);
+        // $user->disabilities()->attach($arm);
 
     }
 }

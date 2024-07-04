@@ -18,13 +18,13 @@
                 
                 
                 <nav class="navbar mb-3">
-                    <div class="container">
+                    <div class="container-fluid">
 
                         <a href="#" class="navbar-brand text-start ">
                             <img src="../images/logo.png" alt="UniqHire Logo" style="height:5rem;">
                         </a>
                         <div class="fs-6 dropdown">
-                            <span class="fs-5 mr-2" style="font-weight: bold;">
+                            <span class="fs-5" style="font-weight: bold; padding-right: 1rem;">
                                 {{ Auth::user()->firstname . ' ' . Auth::user()->lastname }}
                             </span>
                             <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
@@ -49,6 +49,8 @@
         
     </div>
 </body>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
+
 <style>
     * {
         font-family: 'DM Sans', sans-serif;
@@ -62,6 +64,12 @@
 
     .accent-text {
         color: #04B000;
+    }
+
+    .error-msg {
+        color: #FF0000;
+        font-style: italic;
+        font-size: 1rem;
     }
 
     .bg-text {

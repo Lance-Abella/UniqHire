@@ -10,6 +10,9 @@ Route::get('/login', [AuthController::class, 'showLogin'])->name('login-page');
 Route::post('/login', [AuthController::class, 'login']);
 
 Route::get('/register', [AuthController::class, 'showRegistration'])->name('register-form');
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/register/pwd', [AuthController::class, 'pwdSection'])->name('pwd-section');
+
 
 Route::get('/logout', [AuthController::class, 'logout']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

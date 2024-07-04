@@ -25,14 +25,14 @@
                     <input type="email" class="form-control" id="floatingInput" name="email" placeholder="Email">
                     <label for="floatingInput">Email Address</label>
                     @error('email')
-                        <span>{{ $message }}</span>
+                        <span class="error-msg">{{ $message }}</span>
                     @enderror
                 </div>
                 <div class="form-floating mb-2">
                     <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
                     <label for="floatingPassword">Password</label>
                     @error('password')
-                        <span>{{ $message }}</span>
+                        <span class="error-msg">{{ $message }}</span>
                     @enderror
                 </div>
                 <div class="row mb-4">

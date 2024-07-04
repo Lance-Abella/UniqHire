@@ -23,7 +23,7 @@ class User extends Authenticatable
     // ];
 
     protected $fillable = [
-        'firstname', 'lastname', 'email', 'contactnumber', 'password', 'city', 'state', 'pwd_card',
+        'email', 'password',
     ];
 
     public function roles() {
@@ -33,6 +33,12 @@ class User extends Authenticatable
     public function hasRole($role) {
         return $this->roles()->where('role_name', $role)->exists();
     }
+
+    public function userInfo(){
+        return $this->hasOne(UserInfo::class);
+    }
+
+    
 
     /**
      * The attributes that should be hidden for serialization.
