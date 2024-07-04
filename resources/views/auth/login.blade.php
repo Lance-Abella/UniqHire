@@ -2,7 +2,7 @@
 
 @section('page-title', 'UniqHire Login')
 
-@section('page-content')
+@section('auth-content')
 <div class="container-fluid vh-100 d-flex justify-content-center align-items-center">
     <div class="row bg-white" style="width:80rem; height:50rem; border-radius:2rem; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
         <div class="col left" style="padding-left:5rem; padding-top:5.5rem;">
@@ -19,14 +19,21 @@
             <div class="mb-4">
                 <span class="fs-5 ">Don't have an account? <a href="{{ route('register-form') }}" class="fs-5 link-underline link-underline-opacity-0">Create an account.</a></span>
             </div>
-            <form action="">
+            <form action="{{ route('login-page') }}" method="POST">
+                @csrf
                 <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="Email">
+                    <input type="email" class="form-control" id="floatingInput" name="email" placeholder="Email">
                     <label for="floatingInput">Email Address</label>
+                    @error('email')
+                        <span>{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="form-floating mb-2">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
                     <label for="floatingPassword">Password</label>
+                    @error('password')
+                        <span>{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="row mb-4">
                     <div class="col">

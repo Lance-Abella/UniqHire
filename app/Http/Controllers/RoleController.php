@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AllUser;
-use App\Http\Requests\StoreAllUserRequest;
-use App\Http\Requests\UpdateAllUserRequest;
+use App\Models\Role;
+use App\Http\Requests\StoreRoleRequest;
+use App\Http\Requests\UpdateRoleRequest;
 
-class AllUserController extends Controller
+class RoleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class AllUserController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreAllUserRequest $request)
+    public function store(StoreRoleRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class AllUserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(AllUser $allUser)
+    public function show(Role $role)
     {
         //
     }
@@ -43,7 +43,7 @@ class AllUserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(AllUser $allUser)
+    public function edit(Role $role)
     {
         //
     }
@@ -51,7 +51,7 @@ class AllUserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateAllUserRequest $request, AllUser $allUser)
+    public function update(UpdateRoleRequest $request, Role $role)
     {
         //
     }
@@ -59,7 +59,7 @@ class AllUserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(AllUser $allUser)
+    public function destroy(Role $role)
     {
         //
     }

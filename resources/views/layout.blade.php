@@ -14,6 +14,9 @@
     <div class="container-fluid ">
         <div class="row border-bottom mb-2">
             <div class="col">
+                @if (Auth::check())
+                
+                
                 <nav class="navbar mb-3">
                     <div class="container">
 
@@ -22,7 +25,7 @@
                         </a>
                         <div class="fs-6 dropdown">
                             <span class="fs-5 mr-2" style="font-weight: bold;">
-                                First Name Last Name
+                                {{ Auth::user()->firstname . ' ' . Auth::user()->lastname }}
                             </span>
                             <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
                             <ul class="dropdown-menu dropdown-menu-end">
@@ -31,11 +34,16 @@
                         </div>
                     </div>
                 </nav>
+                @endif
             </div>
         </div>
         <div class="row">
             <div class="col">
-                @yield('page-content')
+                @if(!Auth::check())
+                    @yield('auth-content')
+                @else
+                    @yield('page-content')
+                @endif
             </div>
         </div>
         

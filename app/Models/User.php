@@ -11,16 +11,28 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+    // /**
+    //  * The attributes that are mass assignable.
+    //  *
+    //  * @var array<int, string>
+    //  */
+    // protected $fillable = [
+    //     'name',
+    //     'email',
+    //     'password',
+    // ];
+
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'firstname', 'lastname', 'email', 'contactnumber', 'password', 'city', 'state', 'pwd_card',
     ];
+
+    public function roles() {
+        return $this->belongsToMany(Role::class);
+    }
+
+    public function hasRole($role) {
+        return $this->roles()->where('role_name', $role)->exists();
+    }
 
     /**
      * The attributes that should be hidden for serialization.
@@ -37,11 +49,11 @@ class User extends Authenticatable
      *
      * @return array<string, string>
      */
-    protected function casts(): array
-    {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
-    }
+    // protected function casts(): array
+    // {
+    //     return [
+    //         'email_verified_at' => 'datetime',
+    //         'password' => 'hashed',
+    //     ];
+    // }
 }

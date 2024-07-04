@@ -2,20 +2,33 @@
 
 @section('page-title', 'UniqHire Login')
 
-@section('page-content')
+@section('auth-content')
 <div class="container vh-100">
     <div class="row" style="padding-top:3rem;">
         <div class="col">
             <div class="text-start" style="font-size: 2rem; font-weight:bold;">
                 <a href="" class="m-1"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" style="fill: rgba(4, 176, 0, 1);transform: ;msFilter:;"><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"></path></svg></a>
                 Create an Account.
-                
             </div>
-           
         </div>
-        <div class="col">
-        <div class="text-end">
+        <!-- <div class="col-2">
+            <div class="text-center">
                 <img src="../images/logo.png" alt="UniqHire Logo" style="height: 3.7rem;">
+            </div>
+        </div> -->
+        <div class="col ">
+            <div class="row">
+                <div class="col d-flex align-items-center justify-content-end">
+                    <label for="registerAs">Register As:</label>
+                </div>
+                <div class="col">
+                    <select class="form-select form-select" name="roles[]" id="roles" aria-label="Small select example">
+                        @foreach ($roles as $role)
+                            <option value="{{ $role->id }}">{{ $role->role_name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                        
             </div>
         </div>
         <hr class="mb-4">
@@ -77,7 +90,7 @@
                 </div>
                 <div class="col">
                     <div class="form-floating mb-3">
-                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
                             <option selected>Arm Amputee</option>
                             <option value="1">Leg Amputee</option>
                             <option value="2">Two</option>
