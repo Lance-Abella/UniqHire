@@ -19,10 +19,12 @@
                 
                 <nav class="navbar mb-3">
                     <div class="container-fluid">
-
                         <a href="#" class="navbar-brand text-start ">
                             <img src="../images/logo.png" alt="UniqHire Logo" style="height:5rem;">
                         </a>
+                        @if (Auth::user()->hasRole('Admin'))
+                            <a href="{{ route('admin-dash') }}">Dashboard</a>
+                        @endif
                         <div class="fs-6 dropdown">
                             <span class="fs-5" style="font-weight: bold; padding-right: 1rem;">
                                 {{ Auth::user()->userInfo->firstname . ' ' . Auth::user()->userInfo->lastname }}

@@ -39,7 +39,7 @@ class DatabaseSeeder extends Seeder
         $visual = Disability::create(['disability_name' => 'Visually Impaired']);
 
 
-        $user = User::create([        
+        $adminuser = User::create([        
             'email' => 'kler@example.com',
             'password' => Hash::make('qwe1234'),
             
@@ -52,12 +52,30 @@ class DatabaseSeeder extends Seeder
             'city' => 'cebu',
             'state' => 'bulacao',
             'disability_id' => $arm->id, // Assign a disability ID here
-            'user_id' => $user->id,
+            'user_id' => $adminuser->id,
         ]);
 
 
-        $user->roles()->attach($admin);
+        $adminuser->roles()->attach($admin);
         // $user->disabilities()->attach($arm);
 
+        $pwduser = User::create([        
+            'email' => 'pwd@example.com',
+            'password' => Hash::make('qwe1234'),
+            
+        ]);
+
+        UserInfo::create([
+            'firstname' => 'Juan',
+            'lastname' => 'Dela Cruz',
+            'contactnumber' => '09123456789',
+            'city' => 'cebu',
+            'state' => 'bulacao',
+            'disability_id' => $arm->id, // Assign a disability ID here
+            'user_id' => $pwduser->id,
+        ]);
+
+
+        $pwduser->roles()->attach($pwd);
     }
 }
