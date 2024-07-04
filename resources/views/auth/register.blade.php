@@ -22,7 +22,7 @@
                     <label for="registerAs">Register As:</label>
                 </div>
                 <div class="col">
-                    <select class="form-select form-select" name="roles[]" id="roles" aria-label="Small select example" onchange="togglePWDSection()">
+                    <select class="form-select form-select" name="roles" id="roles" aria-label="Small select example" onchange="togglePWDSection()">
                         @foreach ($roles as $role)
                             @if ($role->role_name !== 'Admin')
                                 <option value="{{ $role->role_name }}">{{ $role->role_name }}</option>

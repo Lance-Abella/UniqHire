@@ -56,6 +56,11 @@ class AuthController extends Controller
         ]);
         Log::info('Register method called. User ID: ' . $user->id);
 
+        RoleUser::create([
+            'user_id' => $user->id,
+            'role_id' => $request->roles,
+        ]);
+
         UserInfo::create([
             'firstname' => $request->firstname,
             'lastname' => $request->lastname,

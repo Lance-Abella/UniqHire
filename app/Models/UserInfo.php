@@ -9,7 +9,7 @@ class UserInfo extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'firstname', 'lastname', 'contactnumber', 'password', 'city', 'state', 'pwd_card', 'user_id',
+        'firstname', 'lastname', 'contactnumber', 'password', 'city', 'state', 'disability_id', 'pwd_card', 'user_id',
     ];
     
     public function user(){
