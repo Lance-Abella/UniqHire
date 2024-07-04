@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserInfoController;
+use App\Models\UserInfo;
 use Illuminate\Support\Facades\Route;
 
 
@@ -11,7 +13,12 @@ Route::post('/login', [AuthController::class, 'login']);
 
 Route::get('/register', [AuthController::class, 'showRegistration'])->name('register-form');
 Route::post('/register', [AuthController::class, 'register']);
-Route::post('/register/pwd', [AuthController::class, 'pwdSection'])->name('pwd-section');
+
+// Route::post('/register/pwd', [AuthController::class, 'pwdSection'])->name('pwd-section');
+
+Route::get('/displayusers/{$id}', [UserInfoController::class, 'showAll']);
+
+Route::get('/all', [AuthController::class, 'showAccs']);
 
 
 Route::get('/logout', [AuthController::class, 'logout']);

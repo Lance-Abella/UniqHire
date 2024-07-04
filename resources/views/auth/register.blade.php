@@ -39,7 +39,7 @@
             <div class="row">
                 <div class="col">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" name="firstname" required placeholder="First Name">
+                        <input type="text" class="form-control" id="floatingInput" name="firstname" value="{{ old('firstname') }}" required placeholder="First Name">
                         <label for="floatingInput">First Name</label>
                         @error('firstname')
                             <span class="error-msg">{{ $message }}</span>
@@ -48,7 +48,7 @@
                 </div>
                 <div class="col">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" name="lastname" required placeholder="Last Name">
+                        <input type="text" class="form-control" id="floatingInput" name="lastname" value="{{ old('lastname') }}" required placeholder="Last Name">
                         <label for="floatingInput">Last Name</label>
                         @error('lastname')
                             <span class="error-msg">{{ $message }}</span>
@@ -72,9 +72,9 @@
                 </div>
                 <div class="col">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" name="contact" required placeholder="Contact Number">
+                        <input type="text" class="form-control" id="floatingInput" name="contactnumber" value="{{ old('contactnumber') }}" required placeholder="Contact Number">
                         <label for="floatingInput">Contact Number</label>
-                        @error('contact')
+                        @error('contactnumber')
                             <span class="error-msg">{{ $message }}</span>
                         @enderror
                     </div>
@@ -100,7 +100,7 @@
             <div class="row">
                 <div class="col">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" name="city" required placeholder="City">
+                        <input type="text" class="form-control" id="floatingInput" name="city" value="{{ old('city') }}" required placeholder="City">
                         <label for="floatingInput">City</label>
                         @error('city')
                             <span class="error-msg">{{ $message }}</span>
@@ -109,7 +109,7 @@
                 </div>
                 <div class="col">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" name="state" required placeholder="State">
+                        <input type="text" class="form-control" id="floatingInput" name="state" value="{{ old('state') }}" required placeholder="State">
                         <label for="floatingInput">State</label>
                         @error('state')
                             <span class="error-msg">{{ $message }}</span>
@@ -118,7 +118,7 @@
                 </div>
                 <div class="col" id="disability-section">
                     <div class="form-floating mb-3">
-                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                        <select class="form-select" id="floatingSelect" name="disability" aria-label="Floating label select example">
                             @foreach ($disabilities as $disability)
                                 <option value="{{ $disability->disability_name }}">{{ $disability->disability_name }}</option>
                             @endforeach
