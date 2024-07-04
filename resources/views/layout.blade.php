@@ -25,7 +25,7 @@
                         </a>
                         <div class="fs-6 dropdown">
                             <span class="fs-5" style="font-weight: bold; padding-right: 1rem;">
-                                {{ Auth::user()->firstname . ' ' . Auth::user()->lastname }}
+                                {{ Auth::user()->userInfo->firstname . ' ' . Auth::user()->userInfo->lastname }}
                             </span>
                             <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
                             <ul class="dropdown-menu dropdown-menu-end">
