@@ -17,14 +17,16 @@ Route::post('/register/pwd', [AuthController::class, 'pwdSection'])->name('pwd-s
 Route::get('/logout', [AuthController::class, 'logout']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::middleware('auth')->group(function(){
-    Route::view('/home', 'homepage')->name('home');
+Route::get('/admin/dashboard', [AdminController::class, 'showDashboard'])->name('admin-dash');
+
+// Route::middleware('auth')->group(function(){
+//     Route::view('/home', 'homepage')->name('home');
 
 
-    Route::middleware('role:Admin')->group(function() {
-        Route::get('/admin/dashboard', [AdminController::class, 'showDashboard'])->name('admin-dash');
-    });
-});
+//     Route::middleware('role:Admin')->group(function() {
+//         Route::get('/admin/dashboard', [AdminController::class, 'showDashboard'])->name('admin-dash');
+//     });
+// });
 
 
 // Route::middleware('role:Admin')->group(function(){
