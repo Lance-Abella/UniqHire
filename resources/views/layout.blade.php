@@ -60,8 +60,11 @@
                         </ul>
                     </div>
                 </nav>
-            </div>   
-            @yield('page-content')  
+            </div> 
+            <div class="content-container">
+                @yield('page-content') 
+            </div>  
+             
         </div>
         @else
         <div class="container-fluid">

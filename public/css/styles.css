@@ -19,6 +19,7 @@
     --primary-color: #04b000;
     --primary-color-light: rgba(4, 176, 0, 0.2);
     --text-color: #373737;
+    --text-error: #ff0000;
 
     /* TRANSITION */
     --trans-02: all 0.2 ease;
@@ -42,6 +43,12 @@ ul, li {
     list-style-type: none;
     padding: 0;
     margin: 0;
+}
+
+.error-msg {
+    color: var(--text-error);
+    font-style: italic;
+    font-size: 1rem;
 }
 
 .user-index {
@@ -243,6 +250,24 @@ ul, li {
 
 .forget-pass .accent-text {
     font-weight: normal;
+}
+
+/* TABLE */
+table .table-head {
+    background-color: var(--primary-color);
+    color: var(--sidebar-color);
+    font-weight: bold;
+    text-align: center;
+}
+
+table td button {
+    border: none;
+    background-color: transparent;
+}
+
+table td .table-acts {
+    color: var(--text-error);
+    font-size: 1.6rem;
 }
 
 /* 

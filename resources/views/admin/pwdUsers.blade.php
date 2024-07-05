@@ -2,14 +2,61 @@
 
 @section('page-title', 'Admin Dashboard');
 @section('page-content')
-<div class="sidebar-content justify-content-center">
+<div class="">
     <div class="row mt-4 mb-2">
         <div class="col default-text header-texts border-bottom">
             Admin Dashboard
         </div>
-        <!-- <hr> -->
     </div>
-    <div class="row">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <td class="table-head">User ID</td>
+                <td class="table-head">Name</td>
+                <td class="table-head">Email</td>
+                <td class="table-head">Contact Number</td>
+                <td class="table-head" colspan="2">--</td>
+            </tr>
+        </thead>
+    <tbody class="table-group-divider text-center">
+        <tr>
+            <td>haha</td>
+            <td>haha</td>
+            <td>haha</td>
+            <td>haha</td>
+            <td>
+                <form action="">
+                    <button>
+                        <i class='bx bx-trash table-acts' ></i>
+                    </button>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>haha</td>
+            <td>haha</td>
+            <td>haha</td>
+            <td>haha</td>
+            <td>haha</td>
+        </tr>
+        <tr>
+            <td>haha</td>
+            <td>haha</td>
+            <td>haha</td>
+            <td>haha</td>
+            <td>haha</td>
+        </tr>
+        <!-- @foreach ($users as $user)
+            <tr>
+                <td>{{ $user->id }}</td>
+                <td>{{ $user->userInfo->firstname . ' ' . $user->userInfo->lastname }}</td>
+                <td>{{ $user->email }}</td>
+                <td>{{ $user->userInfo->contactnumber }}</td>
+            </tr>
+        @endforeach -->
+    </tbody>
+</table>
+    <!-- <div class="row">
         <div class="text-center m-2 less-opacity-bg dash-btns" >
             <a href="" class="link-underline link-underline-opacity-0">
                 <span class="row">
@@ -40,7 +87,7 @@
                 <div class="d-flex justify-content-center align-items-center accent-text" style="height:5rem; font-weight: bold; font-size: 1.4rem;">Sponsors</div>
             </a>
         </div>
-    </div>
+    </div> -->
 
 </div>
 @endsection

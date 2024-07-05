@@ -92,7 +92,7 @@ class AuthController extends Controller
 
         if(Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->route('home');
+            return redirect()->route('admin-dash');
         }
 
         return back()->withErrors([
@@ -111,8 +111,7 @@ class AuthController extends Controller
     }
 
     public function showAccs() {
-        $users = User::all();
-        return view ('displayUsers', compact('users'));
+        $users = UserInfo::with('user_id');
+        return view ('admin.pwdUsers', compact('users'));
     }
-
 }

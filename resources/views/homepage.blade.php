@@ -1,8 +1,8 @@
 @extends('layout')
 
-@section('page-title', 'UniqHire | Welcome')
+@section('page-title', 'Home')
 @section('page-content')
 
-<h2>Welcome to Home</h2>
+<h2>WELCOME HOME MF!</h2>
 
 @endsection
