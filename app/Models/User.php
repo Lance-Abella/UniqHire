@@ -26,23 +26,20 @@ class User extends Authenticatable
         'email', 'password',
     ];
 
-    public function roles() {
+    public function role() {
         return $this->belongsToMany(Role::class);
     }
 
     public function hasRole($role) {
-        return $this->roles()->where('role_name', $role)->exists();
+        if (is_string($role)) {
+            return $this->roles->contains('name', $role);
+        }
+        return $this->roles->contains('id', $role->id);
     }
 
-    public function userInfo(){
+    public function userInfo() {
         return $this->hasOne(UserInfo::class);
     }
-
-    public function roleUser()
-    {
-        return $this->hasOne(RoleUser::class);
-    }
-
     
 
     /**

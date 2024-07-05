@@ -8,19 +8,23 @@ use Illuminate\Database\Eloquent\Model;
 class UserInfo extends Model
 {
     use HasFactory;
+
     protected $fillable = [
-        'firstname', 'lastname', 'contactnumber', 'password', 'city', 'state', 'disability_id', 'pwd_card', 'user_id',
+        'user_id',
+        'firstname',
+        'lastname',
+        'contactnumber',
+        'city',
+        'state',
+        'disability_id',
+        'pwd_card',
     ];
-    
-    public function user(){
+
+    public function user() {
         return $this->belongsTo(User::class);
     }
 
-    public function disabilities() {
-        return $this->belongsToMany(Disability::class);
-    }
-
-    public function hasDisability($disability) {
-        return $this->disabilities()->where('disability_name', $disability)->exists();
+    public function disability() {
+        return $this->belongsTo(Disability::class);
     }
 }

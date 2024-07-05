@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
         $sponsor = Role::create(['role_name' => 'Sponsor']);
         
         //DISABILITIES
+        $none = Disability::create(['disability_name' => 'Not Applicable']);
         $arm = Disability::create(['disability_name' => 'Arm Amputee']);
         $leg = Disability::create(['disability_name' => 'Leg Amputee']);
         $hear = Disability::create(['disability_name' => 'Hearing Impaired']);
@@ -56,7 +57,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-        $adminuser->roles()->attach($admin);
+        $adminuser->role()->attach($admin);
         // $user->disabilities()->attach($arm);
 
         $pwduser = User::create([        
@@ -76,6 +77,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-        $pwduser->roles()->attach($pwd);
+        $pwduser->role()->attach($pwd);
     }
 }

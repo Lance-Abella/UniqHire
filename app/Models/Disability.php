@@ -8,11 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Disability extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'disability_name',
     ];
 
-    public function userInfos() {
-        return $this->belongsToMany(UserInfo::class);
+    public function userInfo() {
+        return $this->hasMany(UserInfo::class);
     }
 }

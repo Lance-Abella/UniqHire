@@ -16,7 +16,7 @@ Route::post('/register', [AuthController::class, 'register']);
 
 // Route::post('/register/pwd', [AuthController::class, 'pwdSection'])->name('pwd-section');
 
-Route::get('/displayusers/{$id}', [UserInfoController::class, 'showAll']);
+// Route::get('/displayusers/{$id}', [UserInfoController::class, 'showAll']);
 
 Route::get('/all', [AuthController::class, 'showAccs']);
 
@@ -26,14 +26,14 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/admin/pwdusers', [AuthController::class, 'showAccs'])->name('admin-pwdusers');
 
-// Route::middleware('auth')->group(function(){
-//     Route::view('/home', 'homepage')->name('home');
+Route::middleware('auth')->group(function(){
+    Route::view('/home', 'homepage')->name('home');
 
 
-//     Route::middleware('role:Admin')->group(function() {
-//         Route::get('/admin/dashboard', [AdminController::class, 'showDashboard'])->name('admin-dash');
-//     });
-// });
+    Route::middleware('role:Admin')->group(function() {
+        Route::get('/pwd/all', [AuthController::class, 'showAccs'])->name('pwd-list');
+    });
+});
 
 
 // Route::middleware('role:Admin')->group(function(){

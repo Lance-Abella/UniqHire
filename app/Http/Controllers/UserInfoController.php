@@ -63,10 +63,4 @@ class UserInfoController extends Controller
     {
         //
     }
-
-    public function showAll($id)
-    {
-        $users = UserInfo::findOrFail($id);
-        return view('displayUsers', compact('users'));
-    }
 }
