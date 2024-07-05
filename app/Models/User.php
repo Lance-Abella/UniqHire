@@ -32,10 +32,11 @@ class User extends Authenticatable
     }
 
     public function hasRole($role) {
-       if (is_string($role)) {
-            return $this->roles->contains('name', $role);
-        }
-        return $this->roles->contains('id', $role->id);
+        return $this->role()->where('role_name', $role)->exists();
+    //    if (is_string($role)) {
+    //         return $this->roles->contains('name', $role);
+    //     }
+    //     return $this->roles->contains('id', $role->id);
     }
 
     public function userInfo() {

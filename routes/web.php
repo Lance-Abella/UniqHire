@@ -33,7 +33,7 @@ Route::middleware('auth')->group(function(){
 
 
 
-    Route::get('/pwd/all', [AuthController::class, 'showAccs'])->middleware('role:Admin')->name('pwd-list');
+    Route::get('/pwd/all', [AdminController::class, 'showPwds'])->middleware('role:Admin')->name('pwd-list');
 });
 
 

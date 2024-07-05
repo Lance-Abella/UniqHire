@@ -265,7 +265,7 @@ table td button {
     background-color: transparent;
 }
 
-table td .table-acts {
+table td #trash-btn {
     color: var(--text-error);
     font-size: 1.6rem;
 }

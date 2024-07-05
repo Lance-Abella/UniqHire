@@ -31,14 +31,17 @@
                         <i class='bx bx-user-circle side-icon'></i>
                         <span class="side-title">Profile</span>
                     </a></li>
-                    <li><a href="#">
-                        <i class='bx bxs-school side-icon'></i>
-                        <span class="side-title">Trainings</span></a></li>
+                    @if (Auth::user()->hasRole('Admin'))
+                    <li><a href="{{route('pwd-list')}}">
+                        <i class='bx bx-handicap side-icon'></i>
+                        <span class="side-title">PWDs</span>
+                    </a></li>
+                    @endif
                     <li><a href="#"><i class='bx bx-briefcase-alt-2 side-icon'></i><span class="side-title">Employer</span></a></li>
-                    <li><a href="#"><i class='bx bx-cog side-icon'></i><span class="side-title">Profile</span></a></li>
+                    <li><a href="#"><i class='bx bx-cog side-icon'></i><span class="side-title">Sponsor</span></a></li>
                 </ul>
                 <div class="sidebar-bottom">
-                    <li class=""><a href="#"><i class='bx bx-log-out-circle side-icon'></i><span class="side-title">Logout</span></a></li>
+                    <li class=""><a href="{{ url('/logout')}}"><i class='bx bx-log-out-circle side-icon'></i><span class="side-title">Logout</span></a></li>
                 </div>
             </div>
                 
@@ -49,11 +52,8 @@
                 <nav class="navbar">
                     <div class="container-fluid border-bottom">
                         <ul class="d-flex align-items-center">
-                            <li class="logo-container"><a href="#"><img class="logo-small" src="{{ asset('images/logo.png') }}" alt=""></a></li>
-                            @if (Auth::user()->hasRole('Admin'))
+                            <li class="logo-container"><a href="#"><img class="logo-small" src="{{ asset('images/logo.png') }}" alt=""></a></li>           
                             <li class="nav-item"><a href="#">Browse Training Programs</a></li>
-                            @endif
-                            
                             <li class="nav-item"><a href="">Find Work</a></li>
                             <li class="nav-item"><a href="#">About</a></li>
                         
