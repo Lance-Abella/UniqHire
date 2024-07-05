@@ -2,12 +2,12 @@
 
 @section('page-title', 'UniqHire|Create Account')
 
-@section('page-content')
+@section('auth-content')
 <div class="container vh-100">
     <div class="row" style="padding-top:3rem;">
         <div class="col">
             <div class="text-start header-texts">
-                <a href="{{ route('login-page') }}" class="m-1"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" style="fill: rgba(4, 176, 0, 1);transform: ;msFilter:;"><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"></path></svg></a>
+                <a href="{{ route('login-page') }}" class="m-1"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" style="fill: rgba(4, 176, 0, 1);"><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"></path></svg></a>
                 Create an Account.
             </div>
         </div>
@@ -25,7 +25,7 @@
                     <select class="form-select form-select" name="roles" id="roles" aria-label="Small select example" onchange="togglePWDSection()">
                         @foreach ($roles as $role)
                             @if ($role->role_name !== 'Admin')
-                                <option value="{{ $role->role_name }}">{{ $role->role_name }}</option>
+                                <option value="{{ $role->id }}">{{ $role->role_name }}</option>
                             @endif
                         @endforeach
                     </select>
@@ -120,7 +120,7 @@
                     <div class="form-floating mb-3">
                         <select class="form-select" id="floatingSelect" name="disability" aria-label="Floating label select example">
                             @foreach ($disabilities as $disability)
-                                <option value="{{ $disability->disability_name }}">{{ $disability->disability_name }}</option>
+                                <option value="{{ $disability->id }}">{{ $disability->disability_name }}</option>
                             @endforeach
                             
                         </select>

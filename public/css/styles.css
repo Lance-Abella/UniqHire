@@ -1,64 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
 /* Global Styles */
 
 * {
-    font-family: 'DM Sans', sans-serif;
+    font-family: "DM Sans", sans-serif;
     font-size: 1.1rem;
     color: #373737;
     margin: 0;
     padding: 0;
     outline: none;
+    box-sizing: border-box;
+}
+
+:root {
+    /* COLORS */
+    --body-color: #f2f1ee;
+    --sidebar-color: #ffffff;
+    --primary-color: #04b000;
+    --primary-color-light: rgba(4, 176, 0, 0.2);
+    --text-color: #373737;
+
+    /* TRANSITION */
+    --trans-02: all 0.2 ease;
+    --trans-03: all 0.3 ease;
+    --trans-04: all 0.4 ease;
+    --trans-05: all 0.5 ease;
 }
 
 body {
-    background-color: #F2F1EE;
+    background-color: var(--body-color);
     margin: 0;
     padding: 0;
 }
 
 a {
     text-decoration: none;
-    color: #373737;
+    color: var(--text-color);
 }
 
-ul {
+ul, li {
     list-style-type: none;
-    margin: 0;
     padding: 0;
-}
-
-/* Typography */
-
-.default-text {
-    color: #373737;
-}
-
-.accent-text {
-    color: #04B000;
-}
-
-.error-msg {
-    color: #FF0000;
-    font-style: italic;
-    font-size: 1rem;
-}
-
-.bg-text {
-    background-color: #04B000;
-    color: #ffffff;
-}
-
-.bold-texts {
-    font-weight: bold;
+    margin: 0;
 }
 
 .user-index {
     font-weight: bold;
-    padding-right: 1rem;
 }
 
-/* Images */
 
 .logo-big {
     height: 8rem;
@@ -68,19 +57,132 @@ ul {
     height: 5rem;
 }
 
-.notif-icon {
-    padding-right: 1rem;
+.logo-container {
+    padding: 0;
 }
 
-/* Buttons */
-
-.dash-btns {
+.nav-item {
     padding: 2rem;
-    width: 12rem;
-    height: 12rem;
-    border-radius: 2rem;
 }
 
+.user-index {
+    padding-right: 2rem;
+}
+
+/* REUSABLE CSS */
+.sidebar .logo-name {
+    font-size: 17px;
+    font-weight: 500;
+    padding-left: 1rem;
+}
+
+.sidebar .logo-img {
+    min-width: 65px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar .logo-img .side-icon {
+    font-size: 39px;
+    color: var(--primary-color);
+
+}
+
+
+/* SIDEBAR CSS */
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: var(--sidebar-color);
+    width: 90px;
+    padding: 10px 14px;
+    overflow: hidden;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+.sidebar:hover {
+    width: 15rem;
+    transition: all 0.5s ease;
+}
+.sidebar header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.sidebar header .logo-sidebar {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .logo-sidebar img {
+    /* width: 3.5rem; */
+    height: 3rem;
+}
+
+.sidebar li .side-icon {
+    font-size: 27px;
+    min-width: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar li .side-title {
+    padding-left: 1.5rem;
+}
+
+.sidebar li .side-icon, .sidebar li .side-title {
+    color: var(--text-color);
+    transition: var(--trans-02);
+}
+
+.sidebar li {
+    height: 50px;
+    margin-top: 10px;
+    /* background: var(--primary-color); */
+    display: flex;
+    align-items: center;
+}
+
+.sidebar li a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    transition: var(--trans-04);
+}
+
+.sidebar li a:hover {
+    background: var(--primary-color);
+}
+
+.sidebar li a:hover .side-icon, .sidebar li a:hover .side-title {
+    color: var(--body-color);
+}
+
+.sidebar .sidebar-menu {
+    /* background: #636060; */
+    height: calc(100% - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar .sidebar-bottom {
+    padding-bottom: 2rem;
+}
+
+/* PAGE CONTAINER */
+.content-container {
+    padding-left: 4.5rem;
+}
+
+
+/* AUTH CONTENT */
 .clear-btn {
     font-weight: bold;
     width: 10rem;
@@ -93,14 +195,117 @@ ul {
     width: 10rem;
 }
 
-/* Headers */
+.bg-text {
+    background-color: var(--primary-color);
+    color: var(--sidebar-color);
+}
 
 .header-texts {
     font-size: 2rem;
     font-weight: bold;
 }
 
-/* Sidebar */
+ .login-container {
+    width: 80rem;
+    height: 50rem;
+    border-radius: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.login-form {
+    padding-left: 5rem;
+    padding-top: 5.5rem;
+}
+
+.login-btn {
+    height:3.5rem; 
+    width:100%;
+}
+
+.bold-texts {
+    font-weight: bold;
+}
+
+.side-img {
+    background-image: url("../images/side-img1.png"); 
+    border-top-right-radius:2rem; 
+    border-bottom-right-radius:2rem; 
+    background-repeat: no-repeat; 
+    background-position: right; 
+    background-size: cover; 
+    clip-path: polygon(100% 100%, 2% 100%, 22% 0, 100% 0);
+}
+
+.accent-text {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.forget-pass .accent-text {
+    font-weight: normal;
+}
+
+/* 
+header {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 1;
+}
+
+.nav-container {
+    display: flex;
+}
+
+
+.default-text {
+    color: #373737;
+}
+
+.accent-text {
+    color: #04b000;
+}
+
+.error-msg {
+    color: #ff0000;
+    font-style: italic;
+    font-size: 1rem;
+}
+
+
+
+
+
+.user-index {
+    font-weight: bold;
+    padding-right: 1rem;
+}
+
+
+
+.notif-icon {
+    padding-right: 1rem;
+}
+
+
+.dash-btns {
+    padding: 2rem;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 2rem;
+}
+
+
+
+
+
+
+
+
+
 
 .side-bar {
     position: absolute;
@@ -127,7 +332,7 @@ ul {
 }
 
 .side-bar a:hover .icon-svg {
-    fill: #04B000; /* Change icon color on hover */
+    fill: #04b000
 }
 
 .side-bar:hover {
@@ -139,7 +344,7 @@ ul {
     position: relative;
     width: 80px;
     height: 40px;
-    /* top: 14px; */
+    top: 14px;
     text-align: center;
 }
 
@@ -159,32 +364,20 @@ ul {
     bottom: 0;
 }
 
-/* .side-bar li {
+.side-bar li {
     border-top: 1px solid lightgray;
     border-bottom: 1px solid lightgray;
-} */
-
-/* Containers */
-
-.login-container {
-    width: 80rem;
-    height: 50rem;
-    border-radius: 2rem;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.login-form {
-    padding-left: 5rem;
-    padding-top: 5.5rem;
-}
 
-/* Backgrounds */
+
+
+
 
 .less-opacity-bg {
     background-color: rgba(4, 176, 0, 0.2);
 }
 
-
 .sidebar-content {
     padding-left: 6rem;
-}
+} */
