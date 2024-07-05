@@ -25,7 +25,7 @@ class AuthController extends Controller
 
         if(Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()-route('home');
+            return redirect()->intended(route('home'));
         }
 
         return back()->withErrors([
@@ -80,6 +80,16 @@ class AuthController extends Controller
             'disability_id' => $request->disability,
             'pwd_card' => null,
         ]);
+
+        return redirect()->route('login-page');
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
 
         return redirect()->route('login-page');
     }

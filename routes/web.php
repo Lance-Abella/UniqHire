@@ -27,12 +27,13 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/admin/pwdusers', [AuthController::class, 'showAccs'])->name('admin-pwdusers');
 
 Route::middleware('auth')->group(function(){
-    Route::view('/home', 'homepage')->name('home');
+    Route::get('/home', function(){
+        return view('homepage');
+    })->name('home');
 
 
-    Route::middleware('role:Admin')->group(function() {
-        Route::get('/pwd/all', [AuthController::class, 'showAccs'])->name('pwd-list');
-    });
+
+    Route::get('/pwd/all', [AuthController::class, 'showAccs'])->middleware('role:Admin')->name('pwd-list');
 });
 
 

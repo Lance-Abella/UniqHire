@@ -19,41 +19,14 @@
             </tr>
         </thead>
     <tbody class="table-group-divider text-center">
-        <tr>
-            <td>haha</td>
-            <td>haha</td>
-            <td>haha</td>
-            <td>haha</td>
-            <td>
-                <form action="">
-                    <button>
-                        <i class='bx bx-trash table-acts' ></i>
-                    </button>
-                </form>
-            </td>
-        </tr>
-        <tr>
-            <td>haha</td>
-            <td>haha</td>
-            <td>haha</td>
-            <td>haha</td>
-            <td>haha</td>
-        </tr>
-        <tr>
-            <td>haha</td>
-            <td>haha</td>
-            <td>haha</td>
-            <td>haha</td>
-            <td>haha</td>
-        </tr>
-        <!-- @foreach ($users as $user)
+        @foreach ($users as $user)
             <tr>
                 <td>{{ $user->id }}</td>
                 <td>{{ $user->userInfo->firstname . ' ' . $user->userInfo->lastname }}</td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->userInfo->contactnumber }}</td>
             </tr>
-        @endforeach -->
+        @endforeach
     </tbody>
 </table>
     <!-- <div class="row">
