@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AgencyController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserInfoController;
 use App\Models\UserInfo;
@@ -34,6 +35,11 @@ Route::middleware('auth')->group(function(){
 
 
     Route::get('/pwd/all', [AdminController::class, 'showPwds'])->middleware('role:Admin')->name('pwd-list');
+
+    Route::get('/training-programs/manage', [AgencyController::class, 'showPrograms'])->middleware('role:Trainer')->name('programs-manage');
+    // Route::post('/training-programs/manage', [AgencyController::class, 'addProgram']);
+    Route::get('/training-programs/add', [AgencyController::class, 'showAddForm'])->middleware('role:Trainer')->name('programs-add');
+    Route::post('/training-programs/add', [AgencyController::class, 'addProgram'])->middleware('role:Trainer');
 });
 
 

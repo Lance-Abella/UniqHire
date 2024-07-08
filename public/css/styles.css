@@ -4,7 +4,7 @@
 
 * {
     font-family: "DM Sans", sans-serif;
-    font-size: 1.1rem;
+    font-size: 19px;
     color: #373737;
     margin: 0;
     padding: 0;
@@ -20,6 +20,7 @@
     --primary-color-light: rgba(4, 176, 0, 0.2);
     --text-color: #373737;
     --text-error: #ff0000;
+    --icon-gray: rgba(55, 55, 55, 0.43);
 
     /* TRANSITION */
     --trans-02: all 0.2 ease;
@@ -139,6 +140,9 @@ ul, li {
 
 .sidebar li .side-title {
     padding-left: 1.5rem;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+    overflow: hidden;
 }
 
 .sidebar li .side-icon, .sidebar li .side-title {
@@ -270,139 +274,124 @@ table td #trash-btn {
     font-size: 1.6rem;
 }
 
-/* 
-header {
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content:space-between;
-    padding: 1;
+/* TRAINING VIEW */
+.prog-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
 }
 
-.nav-container {
-    display: flex;
+.prog-card, .add-prog-card {
+    height: 21rem;
+    width: 21rem;
+    padding: 1.8rem;
+    border-radius: 1.5rem;
 }
 
-
-.default-text {
-    color: #373737;
+.prog-card {
+    border: 1px solid lightgray;
 }
 
-.accent-text {
-    color: #04b000;
+.add-prog-card {
+    background-color: lightgray;
 }
 
-.error-msg {
-    color: #ff0000;
-    font-style: italic;
-    font-size: 1rem;
+.add-prog-card button {
+    background-color: transparent;
+    border: none;
 }
 
-
-
-
-
-.user-index {
+.prog-card h4 {
     font-weight: bold;
-    padding-right: 1rem;
-}
-
-
-
-.notif-icon {
-    padding-right: 1rem;
-}
-
-
-.dash-btns {
-    padding: 2rem;
-    width: 12rem;
-    height: 12rem;
-    border-radius: 2rem;
-}
-
-
-
-
-
-
-
-
-
-
-.side-bar {
-    position: absolute;
-    height: 90vh;
-    left: 0;
-    background-color: #f7f7f7;
-    width: 91.4px;
     overflow: hidden;
-    transition: width 0.2s linear;
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
-    padding-top: 2rem;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
 }
 
-.side-bar a {
-    position: relative;
-    font-size: 1.2rem;
-    display: table;
-    width: 300px;
-    padding: 10px;
+h4, p {
+    padding: 0;
+    margin: 0;
 }
 
-.side-bar a:hover {
-    background: rgba(4, 176, 0, 0.2);
+.sub-text {
+    color: var(--icon-gray);
 }
 
-.side-bar a:hover .icon-svg {
-    fill: #04b000
+.prog-card .prog-loc {
+    margin-top: 3px;
+    font-weight: 600;
+    overflow: hidden;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
 }
 
-.side-bar:hover {
-    width: 15rem;
-    transition: all 0.5s ease;
+.prog-card .prog-desc {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5; /* Number of lines to show before truncating */
+    overflow: hidden;
+
+    text-overflow: ellipsis;
 }
 
-.side-bar .icon-svg {
-    position: relative;
-    width: 80px;
-    height: 40px;
-    top: 14px;
-    text-align: center;
+.prog-desc-container {
+    height: 140px;
+    max-height: 140px;
 }
 
-.nav-items {
-    position: relative;
-    top: 12px;
-    margin-left: 12px;
+.prog-card .prog-details {
+    width: 6.5rem;
+    font-size: 16px;
+    overflow: hidden;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
 }
 
-.navbar {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+.period {
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
-.logout-btn {
-    position: absolute;
-    bottom: 0;
+.prog-btn button {
+    /* width: 4.5rem; */
+    padding: 6px;
+    font-weight: bold;
+    border: none;
 }
 
-.side-bar li {
-    border-top: 1px solid lightgray;
-    border-bottom: 1px solid lightgray;
+.delete-btn {
+    color: var(--text-error);
+    background-color: transparent;
+    margin-right: 1rem;
 }
 
-
-
-
-
-
-.less-opacity-bg {
-    background-color: rgba(4, 176, 0, 0.2);
+.btn-default {
+    background-color: var(--primary-color-light);
+    color: var(--primary-color);
+    border-radius: 1rem;
+    padding: 5px;
 }
 
-.sidebar-content {
-    padding-left: 6rem;
-} */
+.edit-btn {
+    width: 6rem;
+}
+
+.add-btn {
+    display: flex;
+    font-size: 100px;
+    /* font-weight: bold; */
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-color);
+}
+
+.popup-title {
+    background-color: var(--primary-color);
+}
+
+.popup-title h1 {
+    font-weight: bold;
+    color: var(--body-color);
+}

@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\AllUser;
 use App\Models\Disability;
+use App\Models\EducationLevel;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -38,6 +39,11 @@ class DatabaseSeeder extends Seeder
         $hear = Disability::create(['disability_name' => 'Hearing Impaired']);
         $speech = Disability::create(['disability_name' => 'Speech Impairment']);
         $visual = Disability::create(['disability_name' => 'Visually Impaired']);
+
+        $hsgrad = EducationLevel::create(['education_name' => 'High School Graduate']);
+        $somecoll = EducationLevel::create(['education_name' => 'Some College']);
+        $bachdegree = EducationLevel::create(['education_name' => "Bachelor's Degree"]);
+        $vocational = EducationLevel::create(['education_name' => 'Vocational']);
 
 
         $adminuser = User::create([        
