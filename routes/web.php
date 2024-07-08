@@ -31,9 +31,9 @@ Route::middleware('auth')->group(function(){
         return view('homepage');
     })->name('home');
 
-
-
     Route::get('/pwd/all', [AdminController::class, 'showPwds'])->middleware('role:Admin')->name('pwd-list');
+
+    Route::get('/trainer/all', [AdminController::class, 'showTrainers'])->middleware('role:Admin')->name('trainer-list');
 });
 
 

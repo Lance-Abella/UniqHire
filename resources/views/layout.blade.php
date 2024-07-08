@@ -38,12 +38,15 @@
                     </a></li>
                     @endif
                     @if (Auth::user()->hasRole('Admin'))
-                    <li><a href="{{route('pwd-list')}}">
+                    <li><a href="{{route('trainer-list')}}">
                         <i class='bx bxs-school side-icon'></i>
                         <span class="side-title">Trainers</span>
                     </a></li>
                     @endif
-                    <li><a href="#"><i class='bx bx-briefcase-alt-2 side-icon'></i><span class="side-title">Employer</span></a></li>
+                    <li><a href="#">
+                        <i class='bx bx-briefcase-alt-2 side-icon'></i>
+                    <span class="side-title">Employer</span>
+                    </a></li>
                     <li><a href="#"><i class='bx bx-cog side-icon'></i><span class="side-title">Sponsor</span></a></li>
                 </ul>
                 <div class="sidebar-bottom">
