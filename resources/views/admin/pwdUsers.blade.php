@@ -1,11 +1,11 @@
 @extends('layout')
 
-@section('page-title', 'Admin Dashboard');
+@section('page-title', 'PWDs Users');
 @section('page-content')
 <div class="">
     <div class="row mt-4 mb-2">
         <div class="col default-text header-texts border-bottom">
-            Admin Dashboard
+            Person with Disabilities
         </div>
     </div>
     <table class="table table-striped table-hover">
