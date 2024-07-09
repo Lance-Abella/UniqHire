@@ -12,6 +12,18 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
+    public function showHomePage()
+    {
+        $images = [
+            'images/18.png',
+            'images/19.png',
+            'images/20.png',
+            'images/21.png',
+        ];
+
+        return view('homepage', compact('images'));
+    }
+
     //LOGIN PROCESS
     public function showLogin() {
         return view('auth.login');

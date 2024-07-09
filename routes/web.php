@@ -27,9 +27,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/admin/pwdusers', [AuthController::class, 'showAccs'])->name('admin-pwdusers');
 
 Route::middleware('auth')->group(function(){
-    Route::get('/home', function(){
-        return view('homepage');
-    })->name('home');
+    Route::get('/home', [AuthController::class, 'showHomePage'])->name('home');
 
 
 
