@@ -27,10 +27,12 @@
                 <p class="sub-text prog-details "><i class='bx bx-calendar sub-text'></i> {{ $program->remainingDays }} days to go</p>
             </div>
             <div class="d-flex justify-content-center mt-3 prog-btn">
-                <form action="">
+                <form action="{{ route('programs-delete', $program->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
                     <button type="submit" class="delete-btn">Delete</button>
                 </form>
-                <form action="">
+                <form action="{{ route('programs-edit', $program->id) }}" method="GET">
                     <button class="edit-btn btn-default">Edit</button>
                 </form>
             </div>

@@ -16,7 +16,6 @@ Route::get('/register', [AuthController::class, 'showRegistration'])->name('regi
 Route::post('/register', [AuthController::class, 'register']);
 
 // Route::post('/register/pwd', [AuthController::class, 'pwdSection'])->name('pwd-section');
-
 // Route::get('/displayusers/{$id}', [UserInfoController::class, 'showAll']);
 
 Route::get('/all', [AuthController::class, 'showAccs']);
@@ -40,6 +39,11 @@ Route::middleware('auth')->group(function(){
     // Route::post('/training-programs/manage', [AgencyController::class, 'addProgram']);
     Route::get('/training-programs/add', [AgencyController::class, 'showAddForm'])->middleware('role:Trainer')->name('programs-add');
     Route::post('/training-programs/add', [AgencyController::class, 'addProgram'])->middleware('role:Trainer');
+
+    Route::delete('/training-programs/{id}', [AgencyController::class, 'deleteProgram'])->middleware('role:Trainer')->name('programs-delete');
+    Route::get('/training-programs/{id}/edit', [AgencyController::class, 'editProgram'])->middleware('role:Trainer')->name('programs-edit');
+    Route::put('/training-programs/{id}', [AgencyController::class, 'updateProgram'])->middleware('role:Trainer')->name('programs-update');
+
 });
 
 

@@ -55,4 +55,62 @@ class AgencyController extends Controller
 
         return redirect()->route('programs-manage');
     }
+
+    public function deleteProgram($id)
+    {
+        $program = TrainingProgram::find($id);
+
+        if ($program && $program->agency_id == auth()->id())
+        {
+            $program->delete();
+        }
+
+        return redirect()->route('programs-manage');
+
+    }
+
+    public function editProgram($id)
+    {
+        $program = TrainingProgram::find($id);
+
+        if ($program && $program->agency_id == auth()->id())
+        {
+            $disabilities = Disability::all();
+            $levels = EducationLevel::all();
+
+            return view('agency.editProg', compact('program', 'disabilities', 'levels'));
+        }
+
+        return redirect()->route('programs-manage');
+
+    }
+
+    public function updateProgram(Request $request, $id)
+    {
+        $program = TrainingProgram::find($id);
+
+        if($program && $program->agency_id == auth()->id())
+        {
+            $request->validate([
+                'title' => 'required|string|max:255',
+                'city' => 'required|string|max:255',
+                'description' => 'required|string',
+                'start_date' => 'required|date',
+                'end_date' => 'required|date',
+            ]);
+
+            $program->update([
+                'title' => $request->title,
+                'city' => $request->city,
+                'description' => $request->description,
+                'start' => $request->start_date,
+                'end' => $request->end_date,
+                'disability_id' => $request->disability,
+                'education_id' => $request->education,
+            ]);
+        }
+
+        return redirect()->route('programs-manage');
+
+    }
 }
