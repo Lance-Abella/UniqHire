@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/css-grid-layout.css') }}">
     <link rel="icon" href="{{ asset('images/tab-icon.png') }}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -62,7 +63,7 @@
                     <div class="container-fluid border-bottom">
                         <ul class="d-flex align-items-center">
                             <li class="logo-container"><a href="#"><img class="logo-small" src="{{ asset('images/logo.png') }}" alt=""></a></li>           
-                            <li class="nav-item"><a href="#">Browse Training Programs</a></li>
+                            <li class="nav-item"><a href="{{ route('pwd-homepage') }}">Browse Training Programs</a></li>
                             <li class="nav-item"><a href="">Find Work</a></li>
                             <li class="nav-item"><a href="#">About</a></li>
                         
@@ -74,7 +75,7 @@
                 </nav>
             </div> 
             <div class="content-container">
-                @yield('page-content') 
+                @yield('page-content')
             </div>  
              
         </div>

@@ -11,6 +11,10 @@ class UserInfoController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function pwdHomepage() {
+        return view('pwd.homepage');
+    }
+
     public function index()
     {
         //

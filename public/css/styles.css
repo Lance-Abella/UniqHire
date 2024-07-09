@@ -184,6 +184,10 @@ ul, li {
 }
 
 /* PAGE CONTAINER */
+/* .container-fluid{
+    padding: 0;
+} */
+
 .content-container {
     padding-left: 4.5rem;
 }

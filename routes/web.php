@@ -20,6 +20,7 @@ Route::post('/register', [AuthController::class, 'register']);
 
 Route::get('/all', [AuthController::class, 'showAccs']);
 
+Route::get('/pwd/homepage', [UserInfoController::class, 'pwdHomepage'])->name('pwd-homepage');
 
 Route::get('/logout', [AuthController::class, 'logout']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
