@@ -38,12 +38,20 @@
                         <span class="side-title">PWDs</span>
                     </a></li>
                     @endif
-                    @if (Auth::user()->hasRole('Admin'))
-                    <li><a href="{{route('trainer-list')}}">
-                        <i class='bx bxs-school side-icon'></i>
-                        <span class="side-title">Trainers</span>
-                    </a></li>
-                    @endif
+
+                    @if (Auth::user()->hasRole('Trainer'))
+                      <li><a href="{{route('programs-manage')}}">
+                              <i class='bx bxs-school side-icon'></i>
+                              <span class="side-title">Training Programs</span>
+                          </a></li>
+
+                      @if (Auth::user()->hasRole('Admin'))
+                      <li><a href="{{route('trainer-list')}}">
+                          <i class='bx bxs-school side-icon'></i>
+                          <span class="side-title">Trainers</span>
+                      </a></li>
+
+                      @endif
                     <li><a href="#">
                         <i class='bx bx-briefcase-alt-2 side-icon'></i>
                     <span class="side-title">Employer</span>
@@ -62,9 +70,17 @@
                 <nav class="navbar">
                     <div class="container-fluid border-bottom">
                         <ul class="d-flex align-items-center">
+
+                        <li class="logo-container"><a href="#"><img class="logo-small" src="{{ asset('images/logo.png') }}" alt=""></a></li>
+                            <li class="nav-item"><a href="{{route('home')}}">Home</a></li>
+                            @if (Auth::user()->hasRole('PWD'))
+                            <li class="nav-item"><a href="">Browse Training Programs</a></li>
+
                             <li class="logo-container"><a href="#"><img class="logo-small" src="{{ asset('images/logo.png') }}" alt=""></a></li>           
                             <li class="nav-item"><a href="{{ route('pwd-homepage') }}">Browse Training Programs</a></li>
                             <li class="nav-item"><a href="">Find Work</a></li>
+                            @endif
+
                             <li class="nav-item"><a href="#">About</a></li>
                         
                         </ul>
@@ -76,8 +92,11 @@
             </div> 
             <div class="content-container">
                 @yield('page-content')
-            </div>  
-             
+            
+            </div>
+
+=======
+        </div>  
         </div>
         @else
         <div class="container-fluid">
