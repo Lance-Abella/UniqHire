@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Agency;
-use App\Http\Requests\StoreAgencyRequest;
-use App\Http\Requests\UpdateAgencyRequest;
+use App\Models\Role;
+use App\Http\Requests\StoreRoleRequest;
+use App\Http\Requests\UpdateRoleRequest;
 
-class AgencyController extends Controller
+class RoleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class AgencyController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreAgencyRequest $request)
+    public function store(StoreRoleRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class AgencyController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Agency $agency)
+    public function show(Role $role)
     {
         //
     }
@@ -43,7 +43,7 @@ class AgencyController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Agency $agency)
+    public function edit(Role $role)
     {
         //
     }
@@ -51,7 +51,7 @@ class AgencyController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateAgencyRequest $request, Agency $agency)
+    public function update(UpdateRoleRequest $request, Role $role)
     {
         //
     }
@@ -59,7 +59,7 @@ class AgencyController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Agency $agency)
+    public function destroy(Role $role)
     {
         //
     }

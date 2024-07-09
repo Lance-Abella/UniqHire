@@ -2,15 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Sponsor;
-use App\Http\Requests\StoreSponsorRequest;
-use App\Http\Requests\UpdateSponsorRequest;
+use App\Models\UserInfo;
+use App\Http\Requests\StoreUserInfoRequest;
+use App\Http\Requests\UpdateUserInfoRequest;
 
-class SponsorController extends Controller
+class UserInfoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+    public function pwdHomepage() {
+        return view('pwd.homepage');
+    }
+
     public function index()
     {
         //
@@ -27,7 +31,7 @@ class SponsorController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreSponsorRequest $request)
+    public function store(StoreUserInfoRequest $request)
     {
         //
     }
@@ -35,7 +39,7 @@ class SponsorController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Sponsor $sponsor)
+    public function show(UserInfo $userInfo)
     {
         //
     }
@@ -43,7 +47,7 @@ class SponsorController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Sponsor $sponsor)
+    public function edit(UserInfo $userInfo)
     {
         //
     }
@@ -51,7 +55,7 @@ class SponsorController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateSponsorRequest $request, Sponsor $sponsor)
+    public function update(UpdateUserInfoRequest $request, UserInfo $userInfo)
     {
         //
     }
@@ -59,7 +63,7 @@ class SponsorController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Sponsor $sponsor)
+    public function destroy(UserInfo $userInfo)
     {
         //
     }

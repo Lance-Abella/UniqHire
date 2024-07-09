@@ -1,4 +1,4 @@
-<!-- <form action="" class="">
+<form action="{{ route('logout') }}" class="">
     @csrf
     <ul class="list-group list-group-flush">
         <li class="list-group-item"><button type="submit" class="border-0 bg-transparent default-text" disabled style="width:10rem; text-align:left;">
@@ -11,4 +11,4 @@
         Logout
         </buton></li>
     </ul>
-</form> -->
+</form>

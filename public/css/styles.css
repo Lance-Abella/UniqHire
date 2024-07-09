@@ -1,0 +1,412 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+/* Global Styles */
+
+* {
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.1rem;
+    color: #373737;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+:root {
+    /* COLORS */
+    --body-color: #f2f1ee;
+    --sidebar-color: #ffffff;
+    --primary-color: #04b000;
+    --primary-color-light: rgba(4, 176, 0, 0.2);
+    --text-color: #373737;
+    --text-error: #ff0000;
+
+    /* TRANSITION */
+    --trans-02: all 0.2 ease;
+    --trans-03: all 0.3 ease;
+    --trans-04: all 0.4 ease;
+    --trans-05: all 0.5 ease;
+}
+
+body {
+    background-color: var(--body-color);
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+ul, li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.error-msg {
+    color: var(--text-error);
+    font-style: italic;
+    font-size: 1rem;
+}
+
+.user-index {
+    font-weight: bold;
+}
+
+
+.logo-big {
+    height: 8rem;
+}
+
+.logo-small {
+    height: 5rem;
+}
+
+.logo-container {
+    padding: 0;
+}
+
+.nav-item {
+    padding: 2rem;
+}
+
+.user-index {
+    padding-right: 2rem;
+}
+
+/* REUSABLE CSS */
+.sidebar .logo-name {
+    font-size: 17px;
+    font-weight: 500;
+    padding-left: 1rem;
+}
+
+.sidebar .logo-img {
+    min-width: 65px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar .logo-img .side-icon {
+    font-size: 39px;
+    color: var(--primary-color);
+
+}
+
+
+/* SIDEBAR CSS */
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: var(--sidebar-color);
+    width: 90px;
+    padding: 10px 14px;
+    overflow: hidden;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+.sidebar:hover {
+    width: 15rem;
+    transition: all 0.5s ease;
+}
+.sidebar header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.sidebar header .logo-sidebar {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .logo-sidebar img {
+    /* width: 3.5rem; */
+    height: 3rem;
+}
+
+.sidebar li .side-icon {
+    font-size: 27px;
+    min-width: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar li .side-title {
+    padding-left: 1.5rem;
+}
+
+.sidebar li .side-icon, .sidebar li .side-title {
+    color: var(--text-color);
+    transition: var(--trans-02);
+}
+
+.sidebar li {
+    height: 50px;
+    margin-top: 10px;
+    /* background: var(--primary-color); */
+    display: flex;
+    align-items: center;
+}
+
+.sidebar li a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    transition: var(--trans-04);
+}
+
+.sidebar li a:hover {
+    background: var(--primary-color);
+}
+
+.sidebar li a:hover .side-icon, .sidebar li a:hover .side-title {
+    color: var(--body-color);
+}
+
+.sidebar .sidebar-menu {
+    /* background: #636060; */
+    height: calc(100% - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar .sidebar-bottom {
+    padding-bottom: 2rem;
+}
+
+/* PAGE CONTAINER */
+/* .container-fluid{
+    padding: 0;
+} */
+
+.content-container {
+    padding-left: 4.5rem;
+}
+
+
+/* AUTH CONTENT */
+.clear-btn {
+    font-weight: bold;
+    width: 10rem;
+    padding: 1rem;
+}
+
+.submit-btn {
+    font-weight: bold;
+    height: 3.5rem;
+    width: 10rem;
+}
+
+.bg-text {
+    background-color: var(--primary-color);
+    color: var(--sidebar-color);
+}
+
+.header-texts {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+ .login-container {
+    width: 80rem;
+    height: 50rem;
+    border-radius: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.login-form {
+    padding-left: 5rem;
+    padding-top: 5.5rem;
+}
+
+.login-btn {
+    height:3.5rem; 
+    width:100%;
+}
+
+.bold-texts {
+    font-weight: bold;
+}
+
+.side-img {
+    background-image: url("../images/side-img1.png"); 
+    border-top-right-radius:2rem; 
+    border-bottom-right-radius:2rem; 
+    background-repeat: no-repeat; 
+    background-position: right; 
+    background-size: cover; 
+    clip-path: polygon(100% 100%, 2% 100%, 22% 0, 100% 0);
+}
+
+.accent-text {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.forget-pass .accent-text {
+    font-weight: normal;
+}
+
+/* TABLE */
+table .table-head {
+    background-color: var(--primary-color);
+    color: var(--sidebar-color);
+    font-weight: bold;
+    text-align: center;
+}
+
+table td button {
+    border: none;
+    background-color: transparent;
+}
+
+table td #trash-btn {
+    color: var(--text-error);
+    font-size: 1.6rem;
+}
+
+/* 
+header {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 1;
+}
+
+.nav-container {
+    display: flex;
+}
+
+
+.default-text {
+    color: #373737;
+}
+
+.accent-text {
+    color: #04b000;
+}
+
+.error-msg {
+    color: #ff0000;
+    font-style: italic;
+    font-size: 1rem;
+}
+
+
+
+
+
+.user-index {
+    font-weight: bold;
+    padding-right: 1rem;
+}
+
+
+
+.notif-icon {
+    padding-right: 1rem;
+}
+
+
+.dash-btns {
+    padding: 2rem;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+.side-bar {
+    position: absolute;
+    height: 90vh;
+    left: 0;
+    background-color: #f7f7f7;
+    width: 91.4px;
+    overflow: hidden;
+    transition: width 0.2s linear;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    padding-top: 2rem;
+}
+
+.side-bar a {
+    position: relative;
+    font-size: 1.2rem;
+    display: table;
+    width: 300px;
+    padding: 10px;
+}
+
+.side-bar a:hover {
+    background: rgba(4, 176, 0, 0.2);
+}
+
+.side-bar a:hover .icon-svg {
+    fill: #04b000
+}
+
+.side-bar:hover {
+    width: 15rem;
+    transition: all 0.5s ease;
+}
+
+.side-bar .icon-svg {
+    position: relative;
+    width: 80px;
+    height: 40px;
+    top: 14px;
+    text-align: center;
+}
+
+.nav-items {
+    position: relative;
+    top: 12px;
+    margin-left: 12px;
+}
+
+.navbar {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+.logout-btn {
+    position: absolute;
+    bottom: 0;
+}
+
+.side-bar li {
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+
+
+
+
+
+
+.less-opacity-bg {
+    background-color: rgba(4, 176, 0, 0.2);
+}
+
+.sidebar-content {
+    padding-left: 6rem;
+} */

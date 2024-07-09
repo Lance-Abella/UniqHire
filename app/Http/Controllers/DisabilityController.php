@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Company;
-use App\Http\Requests\StoreCompanyRequest;
-use App\Http\Requests\UpdateCompanyRequest;
+use App\Models\Disability;
+use App\Http\Requests\StoreDisabilityRequest;
+use App\Http\Requests\UpdateDisabilityRequest;
 
-class CompanyController extends Controller
+class DisabilityController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class CompanyController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreCompanyRequest $request)
+    public function store(StoreDisabilityRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class CompanyController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Company $company)
+    public function show(Disability $disability)
     {
         //
     }
@@ -43,7 +43,7 @@ class CompanyController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Company $company)
+    public function edit(Disability $disability)
     {
         //
     }
@@ -51,7 +51,7 @@ class CompanyController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCompanyRequest $request, Company $company)
+    public function update(UpdateDisabilityRequest $request, Disability $disability)
     {
         //
     }
@@ -59,7 +59,7 @@ class CompanyController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Company $company)
+    public function destroy(Disability $disability)
     {
         //
     }
