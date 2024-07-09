@@ -63,11 +63,12 @@
                             <li class="logo-container"><a href="#"><img class="logo-small" src="{{ asset('images/logo.png') }}" alt=""></a></li>
                             <li class="nav-item"><a href="{{route('home')}}">Home</a></li>
                             @if (Auth::user()->hasRole('PWD'))
-                            <li class="nav-item"><a href="#">Browse Training Programs</a></li>
+                            <li class="nav-item"><a href="">Browse Training Programs</a></li>
                             <li class="nav-item"><a href="">Find Work</a></li>
                             @endif
 
-                            <li class="nav-item"><a href="#">About</a></li>
+                            <li class="nav-item"><a href="#about">About</a></li>
+                            <li class="nav-item"><a href="#about">Contact Us</a></li>
 
                         </ul>
                         <ul class="d-flex align-items-center">
