@@ -79,6 +79,7 @@
 
                         </ul>
                         <ul class="d-flex align-items-center">
+                            <li class="nav-item user-notif"><a href="#"><i class='bx bxs-inbox'></i></a></li>
                             <li class="nav-item user-index"><span>{{ Auth::user()->userInfo->firstname  . " " .  Auth::user()->userInfo->lastname }}</span></li>
                         </ul>
                     </div>

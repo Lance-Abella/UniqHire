@@ -413,6 +413,10 @@ h4, p {
 
 
 /* HOMEPAGE */
+.bxs-inbox {
+    color: var(--primary-color);
+    font-size: 26px;
+}
 .home-top {
     margin-top: 1rem;
     padding-bottom: 5rem;
