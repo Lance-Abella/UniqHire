@@ -33,20 +33,27 @@
                             <i class='bx bx-user-circle side-icon'></i>
                             <span class="side-title">Profile</span>
                         </a></li>
+                    <!-- ADMIN ROLE ACCESS -->
                     @if (Auth::user()->hasRole('Admin'))
                     <li><a href="{{route('pwd-list')}}">
                             <i class='bx bx-handicap side-icon'></i>
                             <span class="side-title">PWDs</span>
                         </a></li>
+                    <li><a href="{{route('trainer-list')}}">
+                            <i class='bx bxs-school side-icon'></i>
+                            <span class="side-title">Training Agencies</span>
+                        </a></li>
+                    <!-- <li><a href="#"><i class='bx bx-briefcase-alt-2 side-icon'></i><span class="side-title">Employers</span></a></li> -->
                     @endif
+                    <!-- TRAINER ROLE ACCESS -->
                     @if (Auth::user()->hasRole('Trainer'))
                     <li><a href="{{route('programs-manage')}}">
                             <i class='bx bxs-school side-icon'></i>
                             <span class="side-title">Training Programs</span>
                         </a></li>
                     @endif
-                    <li><a href="#"><i class='bx bx-briefcase-alt-2 side-icon'></i><span class="side-title">Employer</span></a></li>
-                    <li><a href="#"><i class='bx bx-cog side-icon'></i><span class="side-title">Sponsor</span></a></li>
+
+                    <!-- <li><a href="#"><i class='bx bx-cog side-icon'></i><span class="side-title">Sponsor</span></a></li> -->
                 </ul>
                 <div class="sidebar-bottom">
                     <li class=""><a href="{{ url('/logout')}}"><i class='bx bx-log-out-circle side-icon'></i><span class="side-title">Logout</span></a></li>
